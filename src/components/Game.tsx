@@ -1,3 +1,7 @@
 const Game = () => {
-	return <div>Game</div>;
+	return (
+		<div>Game</div>
+	)
 };
+
+export default Game;
