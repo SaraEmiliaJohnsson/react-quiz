@@ -5,7 +5,7 @@ type WelcomeProps = {
 
 const Welcome = (props: WelcomeProps) => {
 	return (
-		<section>
+		<section className="welcome-container">
 			<h1>Välkommen till mitt quiz!</h1>
 			<p>Tryck på knappen för att starta!</p>
 			<button type="button" onClick={props.nextScreen}>Starta</button>

@@ -24,9 +24,9 @@ const Game = (props: GameProps) => {
 	const options = question.answers.map((answer, index) => (
 		<p key={index}>
 			<label>
-				{answer}
-				<input type="radio" name="anwers" onClick={() => setSelectedAnswer(index)} />
 
+				<input type="radio" name="anwers" onClick={() => setSelectedAnswer(index)} />
+				{answer}
 			</label>
 		</p>
 	));
@@ -48,7 +48,7 @@ const Game = (props: GameProps) => {
 
 	return (
 
-		<section>
+		<section className="game-container">
 			<h1>The quiz</h1>
 
 			<h3>{question.question}</h3>
