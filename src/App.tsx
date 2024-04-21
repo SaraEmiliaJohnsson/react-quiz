@@ -15,6 +15,8 @@ function App() {
 
 	const [currentScreen, setCurrentScreen] = useState<Screen>(Screen.WELCOME);
 
+	const [score, setScore] = useState<number>(0);
+
 	let content: React.ReactElement | null = null
 
 	switch (currentScreen) {
@@ -22,10 +24,10 @@ function App() {
 			content = <Welcome nextScreen={() => setCurrentScreen(Screen.GAME)} />
 			break;
 		case Screen.GAME:
-			content = <Game showResult={() => setCurrentScreen(Screen.RESULT)} />
+			content = <Game showResult={() => setCurrentScreen(Screen.RESULT)} answeredCorrectly={() => setScore(score + 1)} />
 			break;
 		case Screen.RESULT:
-			content = <Result />
+			content = <Result score={score} />
 			break;
 		default:
 			content = null;

@@ -9,6 +9,7 @@ interface Question {
 
 type GameProps = {
 	showResult: () => void;
+	answeredCorrectly: () => void;
 }
 
 const Game = (props: GameProps) => {
@@ -35,7 +36,7 @@ const Game = (props: GameProps) => {
 
 		if (selectedAnswer == question.correct) {
 			console.log("Rätt!");
-
+			props.answeredCorrectly();
 		}
 		if (currentQuestion < questions.length - 1) {
 			setCurrentQuestion(currentQuestion + 1)
