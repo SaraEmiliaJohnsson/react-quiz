@@ -12,6 +12,7 @@ const Game = () => {
 	const questions: Question[] = getQuestions();
 
 	const [currentQuestion, setCurrentQuestion] = useState<number>(0);
+	const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
 	const question = questions[currentQuestion];
 
@@ -19,11 +20,26 @@ const Game = () => {
 		<p key={index}>
 			<label>
 				{answer}
-				<input type="radio" />
+				<input type="radio" name="anwers" onClick={() => setSelectedAnswer(index)} />
 
 			</label>
 		</p>
 	));
+
+	const handleDecided = () => {
+		// Check if anwer is right and go to next question
+
+		if (selectedAnswer == question.correct) {
+			console.log("Rätt!");
+
+		}
+		if (currentQuestion < questions.length - 1) {
+			setCurrentQuestion(currentQuestion + 1)
+		} else {
+
+		}
+
+	}
 
 	return (
 
@@ -34,7 +50,7 @@ const Game = () => {
 
 			{options}
 
-			<button type="button">Svara</button>
+			<button type="button" onClick={handleDecided}>Svara</button>
 		</section>
 
 	)
