@@ -1,9 +1,9 @@
 
-type GameProps = {
+type WelcomeProps = {
 	nextScreen: () => void;
 }
 
-const Welcome = (props: GameProps) => {
+const Welcome = (props: WelcomeProps) => {
 	return (
 		<section>
 			<h1>Välkommen till mitt quiz!</h1>

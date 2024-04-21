@@ -7,7 +7,11 @@ interface Question {
 	correct: number;
 }
 
-const Game = () => {
+type GameProps = {
+	showResult: () => void;
+}
+
+const Game = (props: GameProps) => {
 
 	const questions: Question[] = getQuestions();
 
@@ -36,7 +40,7 @@ const Game = () => {
 		if (currentQuestion < questions.length - 1) {
 			setCurrentQuestion(currentQuestion + 1)
 		} else {
-
+			props.showResult();
 		}
 
 	}

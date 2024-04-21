@@ -22,7 +22,7 @@ function App() {
 			content = <Welcome nextScreen={() => setCurrentScreen(Screen.GAME)} />
 			break;
 		case Screen.GAME:
-			content = <Game />
+			content = <Game showResult={() => setCurrentScreen(Screen.RESULT)} />
 			break;
 		case Screen.RESULT:
 			content = <Result />
