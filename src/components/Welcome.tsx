@@ -1,6 +1,15 @@
-const Welcome = () => {
+
+type GameProps = {
+	nextScreen: () => void;
+}
+
+const Welcome = (props: GameProps) => {
 	return (
-		<div>Welcome</div>
+		<section>
+			<h1>Välkommen till mitt quiz!</h1>
+			<p>Tryck på knappen för att starta!</p>
+			<button type="button" onClick={props.nextScreen}>Starta</button>
+		</section>
 	)
 }
 

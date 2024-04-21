@@ -1,7 +1,23 @@
+
+interface Question {
+	guestion: string;
+	answer: string[];
+	correct: number;
+}
+
 const Game = () => {
 	return (
-		<div>Game</div>
+
+		<section>
+			Game
+		</section>
+
 	)
 };
+
+const getQuestions = () => {
+
+
+}
 
 export default Game;

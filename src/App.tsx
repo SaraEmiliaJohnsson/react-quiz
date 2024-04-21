@@ -19,7 +19,7 @@ function App() {
 
 	switch (currentScreen) {
 		case Screen.WELCOME:
-			content = <Welcome />
+			content = <Welcome nextScreen={() => setCurrentScreen(Screen.GAME)} />
 			break;
 		case Screen.GAME:
 			content = <Game />
